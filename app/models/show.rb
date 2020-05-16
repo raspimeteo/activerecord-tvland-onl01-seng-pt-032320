@@ -4,6 +4,7 @@ class Show < ActiveRecord::Base
   
   def build_network(x)
     network = Network.create(x)
+    self.network_id = network.id
     binding.pry
     
     
