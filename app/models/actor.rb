@@ -9,6 +9,10 @@ class Actor < ActiveRecord::Base
   
   def list_roles
     binding.pry
+    self.characters.map do |character|
+      character.name
+      Show.find_by_id(character.show_id).name
+    end
   end
   
 end
