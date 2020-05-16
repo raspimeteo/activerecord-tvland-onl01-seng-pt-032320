@@ -8,9 +8,9 @@ class Actor < ActiveRecord::Base
   end
   
   def list_roles
-    binding.pry
     self.characters.map do |character|
       character.name
+      binding.pry
       Show.find_by_id(character.show_id).name
     end
   end
